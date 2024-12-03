@@ -1,7 +1,6 @@
 // const scrape = require('website-scraper');
 // const websiteUrl = "https://www.tripadvisor.in/Tourism-g297665-Rajasthan-Vacations.html";
 
-
 // scrape({
 //     urls: [websiteUrl],
 //     urlFilter: function(url) {
@@ -117,7 +116,6 @@
 // app.use(cors());
 // app.use(express.json());
 
-
 // app.get('/', (req, res) => {
 //     res.send("Hello World");
 // });
@@ -178,7 +176,6 @@
 // app.listen(PORT, () => {
 //     console.log(`Server running on http://localhost:${PORT}`);
 // });
-
 
 // import express from 'express';
 // import cors from 'cors';
@@ -249,6 +246,23 @@
 // app.listen(PORT, () => {
 //     console.log(`Server running on http://localhost:${PORT}`);
 // });
+
+import express from 'express';
+import cors from 'cors';
+import scrape from 'website-scraper';
+import archiver from 'archiver';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import fs from 'fs-extra';
+
+// Define __dirname manually for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
 app.post('/scrape', async (req, res) => {
     const { url } = req.body;
 
@@ -261,7 +275,7 @@ app.post('/scrape', async (req, res) => {
     try {
         // Ensure the directory does not exist before scraping
         if (fs.existsSync(outputDirectory)) {
-            fs.removeSync(outputDirectory); // Remove the existing directory
+            fs.removeSync(outputDirectory); // Remove existing directory to avoid conflicts
         }
 
         // Scrape the website
@@ -275,7 +289,7 @@ app.post('/scrape', async (req, res) => {
             directory: outputDirectory,
         });
 
-        // Prepare streaming the ZIP file directly
+        // Set headers for ZIP file download
         res.setHeader('Content-Type', 'application/zip');
         res.setHeader('Content-Disposition', `attachment; filename="${new URL(url).hostname}.zip"`);
 
@@ -285,13 +299,13 @@ app.post('/scrape', async (req, res) => {
             res.status(500).json({ error: "Error creating ZIP file" });
         });
 
-        // Pipe the archive stream directly to the response
+        // Pipe the archive to the response
         archive.pipe(res);
 
-        // Add the scraped files to the archive
+        // Add scraped files to the ZIP archive
         archive.directory(outputDirectory, false);
 
-        // Finalize and start the download
+        // Finalize the ZIP archive and start the download
         await archive.finalize();
 
         // Cleanup the temporary files after streaming
@@ -301,4 +315,9 @@ app.post('/scrape', async (req, res) => {
         console.error("Scraping error:", err);
         res.status(500).json({ error: "Failed to scrape the website", details: err.message });
     }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
