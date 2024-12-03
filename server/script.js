@@ -180,22 +180,75 @@
 // });
 
 
-import express from 'express';
-import cors from 'cors';
-import scrape from 'website-scraper';
-import archiver from 'archiver';
-import { fileURLToPath } from 'url';
-import path from 'path';
-import fs from 'fs-extra';
+// import express from 'express';
+// import cors from 'cors';
+// import scrape from 'website-scraper';
+// import archiver from 'archiver';
+// import { fileURLToPath } from 'url';
+// import path from 'path';
+// import fs from 'fs-extra';
 
-// Define __dirname manually
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// // Define __dirname manually
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+// const app = express();
+// app.use(cors());
+// app.use(express.json());
 
+// app.post('/scrape', async (req, res) => {
+//     const { url } = req.body;
+
+//     if (!url) {
+//         return res.status(400).json({ error: "URL parameter is required" });
+//     }
+
+//     const outputDirectory = path.join(__dirname, 'temp', new URL(url).hostname);
+
+//     try {
+//         // Scrape the website
+//         await scrape({
+//             urls: [url],
+//             urlFilter: (scrapedUrl) => scrapedUrl.indexOf(url) === 0,
+//             recursive: true,
+//             maxDepth: 50,
+//             prettifyUrls: true,
+//             filenameGenerator: 'bySiteStructure',
+//             directory: outputDirectory,
+//         });
+
+//         // Prepare streaming the ZIP file directly
+//         res.setHeader('Content-Type', 'application/zip');
+//         res.setHeader('Content-Disposition', `attachment; filename="${new URL(url).hostname}.zip"`);
+
+//         const archive = archiver('zip', { zlib: { level: 9 } });
+//         archive.on('error', (err) => {
+//             console.error("Archive error:", err);
+//             res.status(500).json({ error: "Error creating ZIP file" });
+//         });
+
+//         // Pipe the archive stream directly to the response
+//         archive.pipe(res);
+
+//         // Add the scraped files to the archive
+//         archive.directory(outputDirectory, false);
+
+//         // Finalize and start the download
+//         await archive.finalize();
+
+//         // Cleanup the temporary files after streaming
+//         fs.removeSync(outputDirectory);
+
+//     } catch (err) {
+//         console.error("Scraping error:", err);
+//         res.status(500).json({ error: "Failed to scrape the website", details: err.message });
+//     }
+// });
+
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//     console.log(`Server running on http://localhost:${PORT}`);
+// });
 app.post('/scrape', async (req, res) => {
     const { url } = req.body;
 
@@ -206,6 +259,11 @@ app.post('/scrape', async (req, res) => {
     const outputDirectory = path.join(__dirname, 'temp', new URL(url).hostname);
 
     try {
+        // Ensure the directory does not exist before scraping
+        if (fs.existsSync(outputDirectory)) {
+            fs.removeSync(outputDirectory); // Remove the existing directory
+        }
+
         // Scrape the website
         await scrape({
             urls: [url],
@@ -243,9 +301,4 @@ app.post('/scrape', async (req, res) => {
         console.error("Scraping error:", err);
         res.status(500).json({ error: "Failed to scrape the website", details: err.message });
     }
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
 });
