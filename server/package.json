@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "fs-extra": "^11.2.0",
+    "node-fetch": "^2.6.9",
+    "website-scraper": "^4.2.3"
+  }
+}
