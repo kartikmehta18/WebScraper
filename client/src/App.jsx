@@ -73,7 +73,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-black relative">
-        <footer className="bg-black text-white py-6 relative z-20 ">
+        {/* <footer className="bg-black text-white py-6 relative z-20 ">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-sm mb-4">
               Made with <span className="text-red-500">❤️</span> by Kartik
@@ -113,7 +113,7 @@ function App() {
               </a>
             </div>
           </div>
-        </footer>
+        </footer> */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative z-10 -mt-10">
           {/* Top Badge */}
           <div className="flex justify-center mb-8">
