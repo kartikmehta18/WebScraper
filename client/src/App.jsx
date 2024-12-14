@@ -117,9 +117,12 @@ function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative z-10 -mt-10">
           {/* Top Badge */}
           <div className="flex justify-center mb-8">
-            <div className="bg-white/10 text-white px-4 py-1 rounded-full text-sm font-medium inline-flex items-center">
+            <button className="relative inline-flex h-10 w-42 overflow-hidden rounded-full p-[1px] focus:outline-none ">
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
               #1 Web Scraping Tool
-            </div>
+              </span>
+            </button>
           </div>
 
           {/* Main Heading */}
@@ -152,7 +155,7 @@ function App() {
           </div>
 
           {/* Scraping Form */}
-         
+
           <div className="max-w-2xl mx-auto">
             <div className="bg-white/10 rounded-xl shadow-xl p-6 transform transition-all hover:scale-105">
               <div className="space-y-4">
