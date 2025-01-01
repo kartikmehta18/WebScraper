@@ -116,9 +116,9 @@ function App() {
           </div>
         </footer>
         <div>
-          <a href="/template">
+          {/* <a href="/template">
             <button className="bg-white/10 border border-white/45 h-8 w-24 rounded-sm  text-white fixed right-4  shadow-lg z-50 -mt-20 hover:rotate-3 transition-all hover:scale-90">Templates</button>
-          </a>
+          </a> */}
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative z-10 -mt-10">
           {/* Top Badge */}
