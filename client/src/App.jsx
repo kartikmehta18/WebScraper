@@ -116,19 +116,29 @@ function App() {
           </div>
         </footer>
         <div>
-          <a href="/template">
+          {/* <a href="/template">
             <button className="bg-white/10 border border-white/45 h-8 w-24 rounded-sm  text-white fixed right-4  shadow-lg z-50 -mt-20 hover:rotate-3 transition-all hover:scale-90">Templates</button>
-          </a>
+          </a> */}
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative z-10 -mt-10">
           {/* Top Badge */}
           <div className="flex justify-center mb-8">
+          <a href="/template">
+            <button className="relative inline-flex h-10 w-42 overflow-hidden rounded-full p-[1px] focus:outline-none ">
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-md font-medium text-white backdrop-blur-3xl">
+                🚀 Explore Templates
+              </span>
+            </button>
+            </a>
+            {/* <a href="/template">
             <button className="relative inline-flex h-10 w-42 overflow-hidden rounded-full p-[1px] focus:outline-none ">
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
               <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
                 #1 Web Scraping Tool
               </span>
             </button>
+            </a> */}
           </div>
 
           {/* Main Heading */}
