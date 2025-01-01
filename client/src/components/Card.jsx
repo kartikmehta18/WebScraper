@@ -11,7 +11,7 @@
 //   let [hoveredIndex, setHoveredIndex] = useState(null);
 //   const handleCopyLink = (link) => {
 //     navigator.clipboard.writeText(link)
-    
+
 //   }
 //   return (
 //     (<div
@@ -143,7 +143,9 @@ export const HoverEffect = ({
               )}
             </AnimatePresence>
             <Card>
-              <img className="rounded-sm" src={item.img} alt={item.title} />
+              <a href={item?.link} target="_blank" >
+                <img className="rounded-md hover:scale-110 transition-all cursor-pointer" src={item.img} alt={item.title} />
+              </a>
               <div className="flex justify-between items-center">
                 <CardTitle>{item.title}</CardTitle>
                 <button className="bg-whi mt-4 px-4 py-2 rounded-lg " onClick={() => handleCopyLink(item?.link)}>🔗</button>
