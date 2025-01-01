@@ -1,26 +1,85 @@
 import React from 'react'
-// import Card from '../../components/Card'
-
+import { HoverEffect } from "../components/Card";
+import '../index.css'
 const Templatepage = () => {
+    const projects = [
+        {
+            img: "template/Builder.png",
+            title: "Builder website",
+            description:
+                "A technology company that builds economic infrastructure for the internet.",
+            link: "https://thewebmax.org/consza/",
+        },
+        {
+            img: "template/Coffee.png",
+            title: "Coffee Brandwebsite",
+            description:
+                "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+            link: "https://bslthemes.com/html/kaffen/",
+        },
+        {
+            img: "template/port1.png",
+            title: "Aesthetic Portfolio",
+            description:
+                "A multinational technology company that specializes in Internet-related services and products.",
+            link: "https://www.hiveart.xyz/perez/",
+        },
+        {
+            img: "template/port2.png",
+            title: "UI & UX designer Portfolio",
+            description:
+                "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
+            link: "https://naru-tailwind.flatheme.net/",
+        },
+        {
+            img: "template/darkport1.png",
+            title: "Dark Portfolio",
+            description:
+                "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+            link: "https://mone-tailwind.flatheme.net/",
+        },
+        {
+            img: "template/photoport.png",
+            title: "Photographer portfolio",
+            description:
+                "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+            link: "https://madebydesignesia.com/themes/kyros/",
+        }, {
+            img: "template/port3.png",
+            title: "portfolio",
+            link: "https://html.designingmedia.com/folioflix/",
+        },
+        {
+            img: "template/edu.png",
+            title: "Education platform ",
+            link: "https://edumim-ten.vercel.app/",
+        },
+        {
+            img: "template/school.png",
+            title: "Elementary School",
+            link: "https://ascent-react.vercel.app/",
+        },
+
+    ];
     return (
         <>
-            <div className='text-white '>
+            <div className='text-whiter  '>
 
                 <div className='text-white text-center text-4xl font-bold mt-2'>
                     <h1>Template Page</h1>
                 </div>
-                <div className='text-white/50 text-center text-2xl font-bold mt-2'>
-                    <h2>launching soon</h2>
+                <div>
+                    <a href="/">
+                        <button className="bg-white/10 border border-white/45 h-8 w-24 rounded-sm  text-white fixed right-4  shadow-lg z-50 -mt-8 hover:rotate-3 transition-all hover:scale-90">Back </button>
+                    </a>
                 </div>
-                {/* <Card className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
-                    <i class="fa fa-lock"></i>
-                    <h2>Enhanced Security</h2>
-                    <p>Our state of the art software offers peace of mind through the strictest security measures.</p>
-                    <button>Learn more</button>
-                </Card> */}
+                
 
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-                    <div className="absolute w-full md:top-[70%] top-[85%]">
+                <div className="max-w-5xl mx-auto px-8">
+                    <HoverEffect items={projects} />
+                </div>
+                {/* <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+                    <div className="absolute w-full md:top-[70%] top-[100%]">
                         <img
                             src="circle.png"
                             alt="Circle"
@@ -28,6 +87,9 @@ const Templatepage = () => {
                             style={{ transform: 'scale(1.5)', position: 'relative' }}
                         />
                     </div>
+                </div> */}
+                <div className='text-white/50 text-center text-2xl font-bold mt-2'>
+                    <h2>more template launching soon...</h2>
                 </div>
             </div>
         </>
