@@ -5,11 +5,13 @@ const Templatepage = () => {
     return (
         <>
             <div className='text-white '>
-               
+
                 <div className='text-white text-center text-4xl font-bold mt-2'>
                     <h1>Template Page</h1>
                 </div>
-
+                <div className='text-white/50 text-center text-2xl font-bold mt-2'>
+                    <h2>launching soon</h2>
+                </div>
                 {/* <Card className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
                     <i class="fa fa-lock"></i>
                     <h2>Enhanced Security</h2>
@@ -30,7 +32,7 @@ const Templatepage = () => {
             </div>
         </>
     )
-    
+
 }
 
 export default Templatepage
