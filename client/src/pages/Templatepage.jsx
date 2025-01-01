@@ -63,10 +63,10 @@ const Templatepage = () => {
     ];
     return (
         <>
-            <div className='text-whiter  '>
+            <div className='text-whiter  '>9
 
                 <div className='text-white text-center text-4xl font-bold mt-2'>
-                    <h1>Template Page</h1>
+                    <h1>HTML Templates 🚀</h1>
                 </div>
                 <div>
                     <a href="/">
