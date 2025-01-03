@@ -55,10 +55,41 @@ const Templatepage = () => {
             link: "https://edumim-ten.vercel.app/",
         },
         {
+            img: "template/nft.png",
+            title: "NFT digital art Marketplace",
+            link: "https://themesflat.co/html/open9/",
+        },
+        {
             img: "template/school.png",
             title: "Elementary School",
             link: "https://ascent-react.vercel.app/",
         },
+        {
+            img: "template/food.png",
+            title: "Food website",
+            link: "https://gramentheme.com/html/fresheat/",
+        },
+        {
+            img: "template/trave;.png",
+            title: "TRAVEL  Planning website",
+            link: "https://demo.bosathemes.com/html/travele/",
+        },
+        {
+            img: "template/company.png",
+            title: "Company website",
+            link: "https://html.themeholy.com/webteck/demo/",
+        },
+        {
+            img: "template/bycycle.png",
+            title: "Bicycle shop website",
+            link: "https://html.rovadex.com/html-creto/",
+        },
+        {
+            img: "template/jewelry.png",
+            title: "jewelry website",
+            link: "https://htmlbeans.com/html/Jewelry/",
+        },
+
 
     ];
     return (
@@ -73,7 +104,7 @@ const Templatepage = () => {
                         <button className="bg-white/10 border border-white/45 h-8 w-24 rounded-sm  text-white fixed right-4  shadow-lg z-50 -mt-8 hover:rotate-3 transition-all hover:scale-90">Back </button>
                     </a>
                 </div>
-                
+
 
                 <div className="max-w-5xl mx-auto px-8">
                     <HoverEffect items={projects} />
@@ -91,6 +122,9 @@ const Templatepage = () => {
                 <div className='text-white/50 text-center text-2xl font-bold mt-2'>
                     <h2>more template launching soon...</h2>
                 </div>
+            </div>
+            <div className='bg-white/5 h-40 border border-white/20  flex justify-center rounded-t-3xl mt-4 '>
+
             </div>
         </>
     )
