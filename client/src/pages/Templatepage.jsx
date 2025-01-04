@@ -89,6 +89,26 @@ const Templatepage = () => {
             title: "jewelry website",
             link: "https://htmlbeans.com/html/Jewelry/",
         },
+        {
+            img: "template/ecomm.png",
+            title: "eCommerce website",
+            link: "https://preview.hibootstrap.com/xton-html/",
+        },
+        {
+            img: "template/cafe.png",
+            title: "Cafe website",
+            link: "https://html.tonatheme.com/2023/earls/",
+        },
+        {
+            img: "template/port4.png",
+            title: "Clean and bright Portfolio",
+            link: "https://mixdesign.club/themeforest/braxton/",
+        },
+        {
+            img: "template/port5.png",
+            title: "Portfolio",
+            link: "https://wordpressboss.com/cp/noir-demo/",
+        },
 
 
     ];
