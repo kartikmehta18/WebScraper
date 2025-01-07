@@ -109,6 +109,11 @@ const Templatepage = () => {
             title: "Portfolio",
             link: "https://wordpressboss.com/cp/noir-demo/",
         },
+        {
+            img: "template/port5.png",
+            title: "Portfolio",
+            link: "https://wordpressboss.com/cp/noir-demo/",
+        },
 
 
     ];
